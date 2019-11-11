@@ -1,16 +1,22 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Card, Button, CardTitle, CardText } from 'reactstrap';
 
 
 const PlayerCard = (props) => {
-    const {name, country, searches} = props;
+    const { dataSet } = props;
+
 
     return (
-        <Card className="playerCard" >
-            <CardTitle>{name}</CardTitle>
-            <CardText>Country From: {country}</CardText>
-            <CardText>Google Search: {searches} </CardText>
-      </Card>
+        <>
+        {dataSet.map(player => (
+            <Card className="playerCard" key={player.id} >
+                <CardTitle>{player.name}</CardTitle>
+                <CardText>Country From: {player.country}</CardText>
+                <CardText>Google Search: {player.searches} </CardText>
+            </Card>
+            ))}
+
+        </>
     );
 
 };

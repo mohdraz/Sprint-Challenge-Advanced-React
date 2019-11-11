@@ -1,9 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from "@testing-library/react";
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+test('if the app is working without crash', () => {
+  // const { getByText } = render(<App />);
+  // getByText(/player/i);
+  render(<App />);
+});
+
+test('if the app component is working', () => {
+  const container = render(<App />);
+  console.log("Container Component: " ,container);
 });

@@ -1,18 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './index.scss';
 
 import axios from "axios";
 
 import PlayerCard from "./components/PlayerCard";
+import CustomCSS from "./components/CustomCSS";
 
 class App extends React.Component {
-    constructor(){
-      super();
-      this.state = {
+      state = {
         data: [],
       }
       
-    }
+    
 
     componentDidMount() {
       axios
@@ -27,20 +26,24 @@ class App extends React.Component {
 
     }
     
+   
 
     render() {
       return (
-        <div class="container">
+        <div className="container">
+          <CustomCSS />
           <h1>Famous Players</h1>
-          <section class="playerCardContainer">
-          {this.state.data.map( player => {
+          <section className="playerCardContainer">
+          {/* {this.state.data.map( player => {
             return <PlayerCard
               name = {player.name}
               country={player.country}
               searches={player.searches}
 
              />
-          })}
+          })} */}
+
+          {<PlayerCard dataSet={this.state.data} />}
           </section>
         </div>
       );
