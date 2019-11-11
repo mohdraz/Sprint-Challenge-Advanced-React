@@ -1,0 +1,42 @@
+// $laptop: ~ "(min-width: 1000px)";
+
+$tablet: "(max-width: 950px)";
+$mobile: "(max-width: 600px)";
+
+html {
+    font-size: 62.5%;
+}
+.container {
+    max-width: 1000px;
+    background: rgb(136, 184, 136);
+    padding: 1.5rem 2rem;
+    margin: auto;
+
+    h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+    }
+}
+
+.playerCardContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+
+    @media (max-width: 800px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 500px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.playerCard {
+    background: rgb(85, 85, 182);
+    // margin: 1rem 1.5rem;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    font-size: 2rem;
+}
